@@ -1,7 +1,7 @@
 name: Python application test with github actions
 on: [push]
 jobs:
-  builds:
+  build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -20,7 +20,10 @@ jobs:
         make test
     - name: Format code
       run: |
-        #make format
+        make format
+    - name: Build Container
+      run: |
+        make build
 
 
 
